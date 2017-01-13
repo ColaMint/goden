@@ -1,13 +1,13 @@
 GO=go
-BIN=god
+BIN=goden
 
-all: god
+all: $(BIN)
 
-god:
+$(BIN): main.go
 	$(GO) build .
 
-install:god
-	cp $(BIN) $(GOPATH)/bin
+install:$(BIN)
+	cp $(BIN) $(GOPATH)/bin/$(BIN)
 
 clean:
 	rm $(BIN)

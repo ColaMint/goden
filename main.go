@@ -13,7 +13,7 @@ import (
 
 var path = flag.String("p", ".", "path to the project root")
 var re = flag.String("r", "", "if specific, only packages whose path matches this regex will be updated")
-var interactive = flag.Bool("i", false, "run god in interactive mode")
+var interactive = flag.Bool("i", false, "run goden in interactive mode")
 
 func main() {
 	var pattern *regexp.Regexp
@@ -22,7 +22,7 @@ func main() {
 
 	flag.Parse()
 
-	pkg, err = build.ImportDir("/tmp/gin", 0)
+	pkg, err = build.ImportDir(*path, 0)
 	if nil != err {
 		fmt.Println(err)
 		return
